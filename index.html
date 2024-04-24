@@ -1,70 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<!-- displays site properly based on user's device -->
 
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/favicon-32x32.png"
-    />
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./images/favicon-32x32.png"
+		/>
 
-    <title>Frontend Mentor | Interactive card details form</title>
-  </head>
-  <body>
-    <header class="card-header">
-      <div class="card-header__front">
-        <p class="card-header__front-numbers">0000 0000 0000 0000</p>
-        <p class="card-header__front-name">Jane Appleseed</p>
-        <p class="card-header__front-expiration">00/00</p>
-      </div>
-      <div class="card-header__back">
-        <p class="card-header__back-cvc">000</p>
-      </div>
-    </header>
-    <main class="card-content">
-      <form class="card-content_form">
-        <div class="card-content__input-group">
-          <label for="card-content__cardholder-name"> Cardholder Name </label>
-          <input
-            type="text"
-            id="card-content__cardholder-name"
-            placeholder="e.g. Jane Appleseed"
-          />
-        </div>
-        <div class="card-content__input-group">
-          <label for="card-content__card-number"> Card Number </label>
-          <input
-            type="number"
-            id="card-content__card-number"
-            placeholder="e.g. 1234 5678 9123 0000"
-          />
-        </div>
-        <div class="card-content__input-group">
-          <p>Exp. Date (MM/YY)</p>
-          <input type="number" id="card-content__exp-mm" placeholder="MM" />
-          <input type="number" id="card-content__exp-yy" placeholder="YY" />
-        </div>
-        <div class="card-content__input-group">
-          <label for="card-content__card-cvc"> CVC </label>
-          <input
-            type="number"
-            id="card-content__card-cvc"
-            placeholder="e.g. 123"
-          />
-        </div>
-        <button type="submit">Confirm</button>
-      </form>
-      <section class="card-thank hide">
-        <h2 class="card-thank__title">Thank you!</h2>
-        <p class="card-thank__description">We've added your card details</p>
-        <button class="card-thank__button-continue">Continue</button>
-      </section>
-    </main>
+		<title>Frontend Mentor | Interactive card details form</title>
+	</head>
+	<body>
+		<header class="card-header">
+			<div class="card-header__front">
+				<img
+					class="card-header__front-bg"
+					src="./images/bg-card-front.png"
+					alt=""
+				/>
+				<div class="card-header__front-display">
+					<img
+						src="public/images/card-logo.svg"
+						alt=""
+						class="card-header__front-logo"
+					/>
+					<p class="card-header__front-numbers">0000 0000 0000 0000</p>
+					<p class="card-header__front-name">Jane Appleseed</p>
+					<p class="card-header__front-expiration">00/00</p>
+				</div>
+			</div>
+			<div class="card-header__back">
+				<img
+					class="card-header__back-bg"
+					src="./images/bg-card-back.png"
+					alt=""
+				/>
+				<p class="card-header__back-cvc">000</p>
+			</div>
+		</header>
+		<main class="card-content">
+			<form class="card-content__form">
+				<div class="card-content__input-group">
+					<label for="card-content__cardholder-name"> Cardholder Name </label>
+					<input
+						type="text"
+						id="card-content__cardholder-name"
+						placeholder="e.g. Jane Appleseed"
+					/>
+				</div>
+				<div class="card-content__input-group">
+					<label for="card-content__card-number"> Card Number </label>
+					<input
+						type="number"
+						id="card-content__card-number"
+						placeholder="e.g. 1234 5678 9123 0000"
+					/>
+				</div>
+				<div class="card-content__input-group">
+					<p>Exp. Date (MM/YY)</p>
+					<div>
+						<input
+							type="number"
+							id="card-content__exp-mm"
+							placeholder="MM"
+						/>
+						<input
+							type="number"
+							id="card-content__exp-yy"
+							placeholder="YY"
+						/>
+					</div>
+				</div>
+				<div class="card-content__input-group">
+					<label for="card-content__card-cvc"> CVC </label>
+					<input
+						type="number"
+						id="card-content__card-cvc"
+						placeholder="e.g. 123"
+					/>
+				</div>
+				<button type="submit">Confirm</button>
+			</form>
+			<section class="card-thank hide">
+				<h2 class="card-thank__title">Thank you!</h2>
+				<p class="card-thank__description">We've added your card details</p>
+				<button class="card-thank__button-continue">Continue</button>
+			</section>
+		</main>
 
-    <script src="app.js" type="module" defer></script>
-  </body>
+		<script
+			src="app.js"
+			type="module"
+			defer
+		></script>
+	</body>
 </html>
