@@ -42,6 +42,26 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  @media screen and (min-width: 450px) {
+    flex-direction: row;
+    background-image: url("./images/bg-main-desktop.png");
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+button {
+  background-color: $very-dark-violet;
+  color: $white;
+  border: none;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  :hover {
+    background: linear-gradient($gradient-start, $gradient-end);
+  }
 }
 
 .card {
@@ -49,6 +69,10 @@ body {
     height: 31%;
     width: 100%;
     position: relative;
+    @media screen and (min-width: 450px) {
+      width: 25%;
+      height: 50%;
+    }
     &__front,
     &__back {
       width: 300px;
@@ -63,6 +87,9 @@ body {
       left: 0;
       bottom: 0;
       z-index: 10;
+      @media screen and (min-width: 450px) {
+        top: 0;
+      }
       &-bg {
         width: 100%;
       }
@@ -108,6 +135,9 @@ body {
       position: absolute;
       top: 0;
       right: 0;
+      @media screen and (min-width: 450px) {
+        bottom: 0;
+      }
       &-bg {
         width: 100%;
       }
@@ -128,6 +158,9 @@ body {
       grid-template-columns: 1fr 1fr;
       row-gap: 1.5rem;
       column-gap: $grid-inline-gap;
+      &.hide {
+        display: none;
+      }
     }
     &__input-group:nth-child(1),
     &__input-group:nth-child(2) {
@@ -148,6 +181,12 @@ body {
         padding: 0.75rem;
         border: 1px solid $dark-grayish-violet;
         border-radius: 0.5rem;
+        cursor: pointer;
+        color: $very-dark-violet;
+        &:focus-visible {
+          border: 1px solid $gradient-end;
+          outline: none;
+        }
         &::placeholder {
           font-size: 1rem;
           color: $dark-grayish-violet;
@@ -162,6 +201,9 @@ body {
             margin: 0;
           }
         }
+        &.error {
+          border: 1px solid $red;
+        }
       }
     }
     &__label {
@@ -171,18 +213,36 @@ body {
       font-size: 0.9rem;
       line-height: 1rem;
     }
+    &__input-error {
+      color: $red;
+      font-size: 0.75rem;
+      &.hide {
+        display: none;
+      }
+    }
     button {
       grid-column: 1 / span 2;
-      background-color: $very-dark-violet;
-      color: $white;
-      border: none;
-      font-size: 1rem;
-      letter-spacing: 0.1rem;
-      padding: 1rem;
-      border-radius: 0.5rem;
     }
   }
   &-thank {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+    &__title {
+      font-size: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2rem;
+    }
+    &__description {
+      color: $dark-grayish-violet;
+      font-size: 1.2rem;
+    }
+    button {
+      margin-top: 1rem;
+      width: 100%;
+    }
     &.hide {
       display: none;
     }
